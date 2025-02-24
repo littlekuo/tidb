@@ -482,7 +482,7 @@ func getDefaultCollate(charsetName string) string {
 }
 
 // escape the identifier for pretty-printing.
-// For instance, the identifier "foo `bar`" will become "`foo ``bar```".
+// For instance, the identifier "foo `bar`" will become "`foo “bar```".
 // The sqlMode controls whether to escape with backquotes (`) or double quotes
 // (`"`) depending on whether mysql.ModeANSIQuotes is enabled.
 func escape(cis model.CIStr, sqlMode mysql.SQLMode) string {

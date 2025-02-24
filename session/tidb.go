@@ -288,8 +288,9 @@ func RegisterStore(name string, driver kv.Driver) error {
 // The path must be a URL format 'engine://path?params' like the one for
 // session.Open() but with the dbname cut off.
 // Examples:
-//    goleveldb://relative/path
-//    boltdb:///absolute/path
+//
+//	goleveldb://relative/path
+//	boltdb:///absolute/path
 //
 // The engine should be registered before creating storage.
 func NewStore(path string) (kv.Storage, error) {

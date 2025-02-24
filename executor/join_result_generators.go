@@ -35,15 +35,15 @@ var (
 // joinResultGenerator is used to generate join results according to the join
 // type. A typical instruction flow is:
 //
-//     hasMatch := false
-//     for innerIter.Current() != innerIter.End() {
-//         matched, err := g.tryToMatch(outer, innerIter, chk)
-//         // handle err
-//         hasMatch = hasMatch || matched
-//     }
-//     if !hasMatch {
-//         g.onMissMatch(outer)
-//     }
+//	hasMatch := false
+//	for innerIter.Current() != innerIter.End() {
+//	    matched, err := g.tryToMatch(outer, innerIter, chk)
+//	    // handle err
+//	    hasMatch = hasMatch || matched
+//	}
+//	if !hasMatch {
+//	    g.onMissMatch(outer)
+//	}
 //
 // NOTE: This interface is **not** thread-safe.
 type joinResultGenerator interface {

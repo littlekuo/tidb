@@ -31,23 +31,23 @@ import (
 //
 // An example of left deep join tree is:
 //
-//    "cartesian join 1"
-//      	|	\
-//      	|	"right child 1"
-//      	|
-//    "cartesian join 2"
-//      	|	\
-//      	|	"right child 2"
-//      	|
-//    "cartesian join ..."
-//      	|	\
-//      	|	"right child ..."
-//      	|
-//    "cartesian join n"
-//      	|	\
-//      	|	"right child n"
-//      	|
-//    "left deep child"
+//	"cartesian join 1"
+//	  	|	\
+//	  	|	"right child 1"
+//	  	|
+//	"cartesian join 2"
+//	  	|	\
+//	  	|	"right child 2"
+//	  	|
+//	"cartesian join ..."
+//	  	|	\
+//	  	|	"right child ..."
+//	  	|
+//	"cartesian join n"
+//	  	|	\
+//	  	|	"right child n"
+//	  	|
+//	"left deep child"
 //
 // The result of getCartesianJoinGroup is:
 // {"left deep child", "right child n", ..., "right child 2", "right child 1"}

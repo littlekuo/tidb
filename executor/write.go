@@ -49,11 +49,11 @@ var (
 // ignoreErr indicate that update statement has the `IGNORE` modifier, in this situation, update statement will not update
 // the keys which cause duplicate conflicts and ignore the error.
 // The return values:
-//     1. changed (bool) : does the update really change the row values. e.g. update set i = 1 where i = 1;
-//     2. handleChanged (bool) : is the handle changed after the update.
-//     3. newHandle (int64) : if handleChanged == true, the newHandle means the new handle after update.
-//     4. lastInsertID (uint64) : the lastInsertID should be set by the newData.
-//     5. err (error) : error in the update.
+//  1. changed (bool) : does the update really change the row values. e.g. update set i = 1 where i = 1;
+//  2. handleChanged (bool) : is the handle changed after the update.
+//  3. newHandle (int64) : if handleChanged == true, the newHandle means the new handle after update.
+//  4. lastInsertID (uint64) : the lastInsertID should be set by the newData.
+//  5. err (error) : error in the update.
 func updateRecord(ctx sessionctx.Context, h int64, oldData, newData []types.Datum, modified []bool, t table.Table,
 	onDup, ignoreErr bool) (bool, bool, int64, uint64, error) {
 	var sc = ctx.GetSessionVars().StmtCtx
@@ -1533,11 +1533,11 @@ func (e *InsertValues) getRow(cols []*table.Column, list []expression.Expression
 }
 
 // fillDefaultValues fills a row followed by these rules:
-//     1. for nullable and no default value column, use NULL.
-//     2. for nullable and have default value column, use it's default value.
-//     3. for not null column, use zero value even in strict mode.
-//     4. for auto_increment column, use zero value.
-//     5. for generated column, use NULL.
+//  1. for nullable and no default value column, use NULL.
+//  2. for nullable and have default value column, use it's default value.
+//  3. for not null column, use zero value even in strict mode.
+//  4. for auto_increment column, use zero value.
+//  5. for generated column, use NULL.
 func (e *InsertValues) fillDefaultValues(row []types.Datum, hasValue []bool, ignoreErr bool) error {
 	for i, c := range e.Table.Cols() {
 		var err error

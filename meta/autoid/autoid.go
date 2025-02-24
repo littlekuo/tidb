@@ -251,7 +251,7 @@ func NewMemoryAllocator(dbID int64) Allocator {
 	}
 }
 
-//autoid error codes.
+// autoid error codes.
 const codeInvalidTableID terror.ErrCode = 1
 
 var localSchemaID = int64(math.MaxInt64)
